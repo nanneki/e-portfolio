@@ -1,52 +1,151 @@
-n<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Kennan Imazatene</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #007acc;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio – Kennan Imazatene</title>
+<style>
+/* Reset & général */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, sans-serif; line-height:1.6; background:#f4f4f9; color:#333; }
+
+/* Header avec prénom */
+header { display:flex; align-items:center; background:#007acc; color:#fff; padding:15px 20px; justify-content:space-between; }
+header h1 { font-size:1.8em; }
+
+/* Menu principal */
+nav { background:#005fa3; }
+nav ul { list-style:none; display:flex; flex-wrap:wrap; }
+nav li { position:relative; }
+nav a { display:block; padding:14px 20px; color:#fff; text-decoration:none; font-weight:bold; }
+nav a:hover { background:#004a82; }
+
+/* Sous-menu */
+nav li ul { display:none; position:absolute; top:100%; left:0; background:#005fa3; flex-direction:column; min-width:200px; z-index:100; }
+nav li:hover ul { display:flex; }
+nav li ul li a { padding:10px 20px; }
+
+/* Sections */
+section { max-width:900px; margin:40px auto; padding:0 20px; }
+section h2 { color:#007acc; border-bottom:2px solid #007acc; padding-bottom:5px; margin-bottom:15px; }
+section h3 { color:#005fa3; margin-top:15px; }
+
+/* Boutons */
+.button { display:inline-block; background:#007acc; color:#fff; padding:10px 15px; text-decoration:none; border-radius:5px; margin-top:10px; }
+.button:hover { background:#005fa3; }
+
+/* Footer */
+footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
+
+/* Responsive */
+@media(max-width:768px){
+  nav ul { flex-direction:column; }
+  nav li ul { position:static; min-width:auto; }
+}
+</style>
 </head>
 <body>
-  <h1>Hi, I am Kennan Imazatene</h1>
+
+<header>
+  <h1>Kennan</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#welcome">Welcome</a></li>
+    <li>
+      <a href="#engineering">Engineering Course</a>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#productions">Best Productions</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#mobility">International Mobility</a>
+      <ul>
+        <li><a href="#pce">PCE</a></li>
+        <li><a href="#lv2">LV2</a></li>
+      </ul>
+    </li>
+    <li><a href="#sustainability">Sustainability & Civic Engagement</a></li>
+    <li><a href="#sport">Sport & Other Activities</a></li>
+    <li>
+      <a href="#career">Career Development</a>
+      <ul>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#pep">PEP</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- Sections -->
+<section id="welcome">
+  <h2>Welcome</h2>
+  <p>Hi, I am Kennan Imazatene.</p>
   <p>I am currently an engineering student in electronics, electrical energy and automation at ENSEEIHT, one of the most renowned engineering schools in France.</p>
+</section>
 
-  <section>
-    <h2>🧩 Projets</h2>
-    <ul>
-      <li><strong>TIPE :</strong> Optimisation de la production d’énergie solaire via MPPT (<a href="#">voir projet</a>)</li>
-      <li><strong>Simulation MATLAB/Simulink :</strong> Modèle photovoltaïque avec algorithme P&O et InCond</li>
-      <li><strong>Prototype Arduino :</strong> Implémentation de l’algorithme MPPT en temps réel</li>
-    </ul>
-  </section>
+<section id="engineering">
+  <h2>Engineering Course</h2>
+  <p>Présentation des cours et modules suivis ainsi que mes réalisations académiques.</p>
+</section>
 
-  <section>
-    <h2>📄 CV & Contact</h2>
-    <p><a href="#">Télécharger mon CV (PDF)</a></p>
-    <p><a href="mailto:kennan.imazatene@gmail.com">Me contacter</a> |
-       <a href="https://www.linkedin.com/in/tonprofil/">LinkedIn</a> |
-       <a href="https://github.com/nanneki">GitHub</a>
-    </p>
-  </section>
+<section id="projects">
+  <h3>Projects</h3>
+  <p>Exemples de projets réalisés : simulations, Arduino, MPPT, etc.</p>
+  <a class="button" href="#">Voir tous les projets</a>
+</section>
+
+<section id="productions">
+  <h3>Best Productions</h3>
+  <p>Mes meilleures productions académiques ou personnelles.</p>
+  <a class="button" href="#">Voir toutes les productions</a>
+</section>
+
+<section id="mobility">
+  <h2>International Mobility</h2>
+  <p>Stages ou semestres à l’étranger, Erasmus, échanges académiques.</p>
+</section>
+
+<section id="pce">
+  <h3>PCE</h3>
+  <p>Détails sur les projets ou expériences liés au PCE.</p>
+</section>
+
+<section id="lv2">
+  <h3>LV2</h3>
+  <p>Détails sur mes compétences en deuxième langue.</p>
+</section>
+
+<section id="sustainability">
+  <h2>Sustainability & Civic Engagement</h2>
+  <p>Mes actions ou projets liés au développement durable et à l’engagement citoyen.</p>
+</section>
+
+<section id="sport">
+  <h2>Sport & Other Activities</h2>
+  <p>Mes activités sportives et autres centres d’intérêt.</p>
+</section>
+
+<section id="career">
+  <h2>Career Development</h2>
+  <p>Mes expériences professionnelles et PEP.</p>
+</section>
+
+<section id="internships">
+  <h3>Internships</h3>
+  <p>Détails des stages réalisés.</p>
+</section>
+
+<section id="pep">
+  <h3>PEP</h3>
+  <p>Détails du Projet d’Études Personnelles ou autres activités professionnelles.</p>
+</section>
+
+<footer>
+  &copy; 2025 Kennan Imazatene – Tous droits réservés
+</footer>
+
 </body>
 </html>
