@@ -3,148 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio – Kennan Imazatene</title>
+<title>Welcome – Kennan Imazatene</title>
 <style>
-/* Reset & général */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: Arial, sans-serif; line-height:1.6; background:#f4f4f9; color:#333; }
-
-/* Header avec prénom */
-header { display:flex; align-items:center; background:#007acc; color:#fff; padding:15px 20px; justify-content:space-between; }
-header h1 { font-size:1.8em; }
-
-/* Menu principal */
-nav { background:#005fa3; }
-nav ul { list-style:none; display:flex; flex-wrap:wrap; }
-nav li { position:relative; }
-nav a { display:block; padding:14px 20px; color:#fff; text-decoration:none; font-weight:bold; }
-nav a:hover { background:#004a82; }
-
-/* Sous-menu */
-nav li ul { display:none; position:absolute; top:100%; left:0; background:#005fa3; flex-direction:column; min-width:200px; z-index:100; }
-nav li:hover ul { display:flex; }
-nav li ul li a { padding:10px 20px; }
-
-/* Sections */
-section { max-width:900px; margin:40px auto; padding:0 20px; }
-section h2 { color:#007acc; border-bottom:2px solid #007acc; padding-bottom:5px; margin-bottom:15px; }
-section h3 { color:#005fa3; margin-top:15px; }
-
-/* Boutons */
-.button { display:inline-block; background:#007acc; color:#fff; padding:10px 15px; text-decoration:none; border-radius:5px; margin-top:10px; }
-.button:hover { background:#005fa3; }
-
-/* Footer */
-footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
-
-/* Responsive */
-@media(max-width:768px){
-  nav ul { flex-direction:column; }
-  nav li ul { position:static; min-width:auto; }
-}
+/* CSS commun à toutes les pages */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;line-height:1.6;background:#f4f4f9;color:#333;}
+header{display:flex;align-items:center;background:#007acc;color:#fff;padding:10px 20px;justify-content:space-between;flex-wrap:wrap;}
+header h1{margin-right:30px;font-size:1.5em;}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;}
+nav li{position:relative;}
+nav a{display:block;padding:10px 15px;color:#fff;text-decoration:none;font-weight:bold;}
+nav a:hover{background:#005fa3;}
+nav li ul{display:none;position:absolute;top:100%;left:0;background:#005fa3;flex-direction:column;min-width:180px;z-index:100;}
+nav li:hover ul{display:flex;}
+nav li ul li a{padding:10px;}
+section{max-width:900px;margin:40px auto;padding:0 20px;}
+h2{color:#007acc;border-bottom:2px solid #007acc;padding-bottom:5px;margin-bottom:15px;}
+.button{display:inline-block;background:#007acc;color:#fff;padding:10px 15px;text-decoration:none;border-radius:5px;margin-top:10px;}
+.button:hover{background:#005fa3;}
+footer{text-align:center;padding:20px;background:#eee;margin-top:40px;}
+@media(max-width:768px){header{flex-direction:column;align-items:flex-start;}nav ul{flex-direction:column;width:100%;}nav li ul{position:static;min-width:auto;}}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Kennan</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Welcome</a></li>
+      <li><a href="engineering.html">Engineering Course</a>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="productions.html">Best Productions</a></li>
+        </ul>
+      </li>
+      <li><a href="mobility.html">International Mobility</a>
+        <ul>
+          <li><a href="pce.html">PCE</a></li>
+          <li><a href="lv2.html">LV2</a></li>
+        </ul>
+      </li>
+      <li><a href="sustainability.html">Sustainability & Civic Engagement</a></li>
+      <li><a href="sport.html">Sport & Other Activities</a></li>
+      <li><a href="career.html">Career Development</a>
+        <ul>
+          <li><a href="internships.html">Internships</a></li>
+          <li><a href="pep.html">PEP</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="#welcome">Welcome</a></li>
-    <li>
-      <a href="#engineering">Engineering Course</a>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#productions">Best Productions</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#mobility">International Mobility</a>
-      <ul>
-        <li><a href="#pce">PCE</a></li>
-        <li><a href="#lv2">LV2</a></li>
-      </ul>
-    </li>
-    <li><a href="#sustainability">Sustainability & Civic Engagement</a></li>
-    <li><a href="#sport">Sport & Other Activities</a></li>
-    <li>
-      <a href="#career">Career Development</a>
-      <ul>
-        <li><a href="#internships">Internships</a></li>
-        <li><a href="#pep">PEP</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-<!-- Sections -->
 <section id="welcome">
   <h2>Welcome</h2>
-  <p>Hi, I am Kennan Imazatene.</p>
+   <h1>Hi, I am Kennan Imazatene</h1>
   <p>I am currently an engineering student in electronics, electrical energy and automation at ENSEEIHT, one of the most renowned engineering schools in France.</p>
-</section>
 
-<section id="engineering">
-  <h2>Engineering Course</h2>
-  <p>Présentation des cours et modules suivis ainsi que mes réalisations académiques.</p>
-</section>
-
-<section id="projects">
-  <h3>Projects</h3>
-  <p>Exemples de projets réalisés : simulations, Arduino, MPPT, etc.</p>
-  <a class="button" href="#">Voir tous les projets</a>
-</section>
-
-<section id="productions">
-  <h3>Best Productions</h3>
-  <p>Mes meilleures productions académiques ou personnelles.</p>
-  <a class="button" href="#">Voir toutes les productions</a>
-</section>
-
-<section id="mobility">
-  <h2>International Mobility</h2>
-  <p>Stages ou semestres à l’étranger, Erasmus, échanges académiques.</p>
-</section>
-
-<section id="pce">
-  <h3>PCE</h3>
-  <p>Détails sur les projets ou expériences liés au PCE.</p>
-</section>
-
-<section id="lv2">
-  <h3>LV2</h3>
-  <p>Détails sur mes compétences en deuxième langue.</p>
-</section>
-
-<section id="sustainability">
-  <h2>Sustainability & Civic Engagement</h2>
-  <p>Mes actions ou projets liés au développement durable et à l’engagement citoyen.</p>
-</section>
-
-<section id="sport">
-  <h2>Sport & Other Activities</h2>
-  <p>Mes activités sportives et autres centres d’intérêt.</p>
-</section>
-
-<section id="career">
-  <h2>Career Development</h2>
-  <p>Mes expériences professionnelles et PEP.</p>
-</section>
-
-<section id="internships">
-  <h3>Internships</h3>
-  <p>Détails des stages réalisés.</p>
-</section>
-
-<section id="pep">
-  <h3>PEP</h3>
-  <p>Détails du Projet d’Études Personnelles ou autres activités professionnelles.</p>
+  <a class="button" href="CV_Mohand.pdf" target="_blank">Télécharger mon CV</a>
 </section>
 
 <footer>
-  &copy; 2025 Kennan Imazatene – Tous droits réservés
+&copy; 2025 Kennan Imazatene – Tous droits réservés
 </footer>
 
 </body>
