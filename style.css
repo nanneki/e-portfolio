@@ -1,0 +1,73 @@
+/* Reset & général */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, sans-serif; line-height:1.6; background:#f4f4f9; color:#333; }
+
+/* Header + menu horizontal avec prénom */
+header {
+  display:flex;
+  align-items:center;
+  background:#007acc;
+  color:#fff;
+  padding:10px 20px;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+header h1 {
+  margin-right:30px;
+  font-size:1.5em;
+}
+
+/* Menu principal */
+nav ul {
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+nav li { position:relative; }
+
+nav a {
+  display:block;
+  padding:10px 15px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover { background:#005fa3; }
+
+/* Sous-menu */
+nav li ul {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#005fa3;
+  flex-direction:column;
+  min-width:180px;
+  z-index:100;
+}
+
+nav li:hover ul { display:flex; }
+
+nav li ul li a { padding:10px; }
+
+/* Sections */
+section { max-width:900px; margin:40px auto; padding:0 20px; }
+h2 { color:#007acc; border-bottom:2px solid #007acc; padding-bottom:5px; margin-bottom:15px; }
+h3 { color:#005fa3; margin-top:15px; }
+
+/* Boutons */
+.button { display:inline-block; background:#007acc; color:#fff; padding:10px 15px; text-decoration:none; border-radius:5px; margin-top:10px; }
+.button:hover { background:#005fa3; }
+
+/* Footer */
+footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
+
+/* Responsive */
+@media(max-width:768px){
+  header { flex-direction:column; align-items:flex-start; }
+  nav ul { flex-direction:column; width:100%; }
+  nav li ul { position:static; min-width:auto; }
+}
