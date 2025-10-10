@@ -105,23 +105,34 @@ footer {
 
 .welcome-layout {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* 1/3 - 2/3 */
+    grid-template-columns: 1fr 2fr; /* image 1/3 - texte 2/3 */
+    height: calc(100vh - 120px); /* prend presque tout l’écran */
+}
+
+.welcome-image-section {
+    background-color: #e6f0ff; /* bleu clair doux */
+    display: flex;
     align-items: center;
-    gap: 40px;
-    padding: 60px 80px;
+    justify-content: center;
+    padding: 40px;
 }
 
 .welcome-image img {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    max-width: 400px;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.welcome-text-section {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 60px;
 }
 
 .welcome-text {
-    color: #333;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    max-width: 600px;
 }
 
 .welcome-text h2 {
@@ -129,17 +140,29 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Version mobile : passe en vertical */
+.welcome-text p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* --- Version mobile --- */
 @media (max-width: 900px) {
     .welcome-layout {
         grid-template-columns: 1fr;
-        text-align: center;
+        height: auto;
+    }
+
+    .welcome-image-section, .welcome-text-section {
         padding: 30px 20px;
     }
 
     .welcome-image img {
         width: 80%;
-        max-width: 350px;
-        margin: 0 auto 20px;
+        max-width: 300px;
+    }
+
+    .welcome-text-section {
+        text-align: center;
     }
 }
