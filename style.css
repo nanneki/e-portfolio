@@ -171,7 +171,7 @@ footer {
 .contact-buttons {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 boutons par ligne */
+    grid-template-columns: repeat(4, 1fr); /* 4 boutons par ligne */
     gap: 20px;
     justify-items: center;
 }
@@ -198,13 +198,13 @@ footer {
 }
 
 /* Couleurs spécifiques par type */
-.linkedin { background: linear-gradient(90deg, #0077b5, #00a0dc); }
+.linkedin { background: linear-gradient(90deg, #333, #666); }
 .github   { background: linear-gradient(90deg, #333, #666); }
-.phone    { background: linear-gradient(90deg, #1a73e8, #4fc3f7); }
-.email    { background: linear-gradient(90deg, #ff7a18, #ffb347); }
-.emailn7  { background: linear-gradient(90deg, #004e92, #000428); }
-.cvfr     { background: linear-gradient(90deg, #28a745, #66bb6a); }
-.cven     { background: linear-gradient(90deg, #6f42c1, #b47cff); }
+.phone    { background: linear-gradient(90deg, #333, #666); }
+.email    { background: linear-gradient(90deg, #333, #666); }
+.emailn7  { background: linear-gradient(90deg, #333, #666); }
+.cvfr     { background: linear-gradient(90deg, #333, #666); }
+.cven     { background: linear-gradient(90deg, #333, #666); }
 
 /* Responsive mobile */
 @media (max-width: 900px) {
@@ -235,3 +235,4 @@ footer {
     font-size: 1.1em;
     vertical-align: middle;
 }
+
