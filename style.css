@@ -170,61 +170,68 @@ footer {
 /* --- Boutons de contact --- */
 .contact-buttons {
     margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 boutons par ligne */
+    gap: 20px;
+    justify-items: center;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 22px;
+    width: 200px;
+    padding: 14px 0;
+    border: none;
     border-radius: 30px;
+    font-size: 1rem;
     font-weight: 600;
-    text-decoration: none;
     color: white;
+    cursor: pointer;
     background: linear-gradient(90deg, #007BFF, #00C6FF);
     background-size: 200% 100%;
-    transition: background-position 0.5s, transform 0.2s;
+    transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
     background-position: right center;
     transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* Couleurs spécifiques par plateforme */
-.linkedin {
-    background: linear-gradient(90deg, #0077b5, #00a0dc);
-}
+/* Couleurs spécifiques par type */
+.linkedin { background: linear-gradient(90deg, #0077b5, #00a0dc); }
+.github   { background: linear-gradient(90deg, #333, #666); }
+.phone    { background: linear-gradient(90deg, #1a73e8, #4fc3f7); }
+.email    { background: linear-gradient(90deg, #ff7a18, #ffb347); }
+.emailn7  { background: linear-gradient(90deg, #004e92, #000428); }
+.cvfr     { background: linear-gradient(90deg, #28a745, #66bb6a); }
+.cven     { background: linear-gradient(90deg, #6f42c1, #b47cff); }
 
-.github {
-    background: linear-gradient(90deg, #333, #666);
-}
-
-.phone {
-    background: linear-gradient(90deg, #1a73e8, #4fc3f7);
-}
-
-.email {
-    background: linear-gradient(90deg, #ff7a18, #ffb347);
-}
-
-.emailn7 {
-    background: linear-gradient(90deg, #004e92, #000428);
-}
-
-.cvfr {
-    background: linear-gradient(90deg, #28a745, #66bb6a);
-}
-
-.cven {
-    background: linear-gradient(90deg, #6f42c1, #b47cff);
-}
-
-/* Sur mobile : centrage des boutons */
+/* Responsive mobile */
 @media (max-width: 900px) {
     .contact-buttons {
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr); /* 2 par ligne sur mobile */
+        gap: 15px;
+    }
+
+    .btn {
+        width: 160px;
+        font-size: 0.95rem;
     }
 }
 
+@media (max-width: 600px) {
+    .contact-buttons {
+        grid-template-columns: 1fr; /* 1 par ligne sur petit écran */
+    }
+
+    .btn {
+        width: 80%;
+    }
+}
+
+/* Icônes dans les boutons */
+.btn i {
+    margin-right: 10px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
