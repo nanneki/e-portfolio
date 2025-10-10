@@ -56,7 +56,7 @@ header {
 
 .nav-links li a {
   text-decoration: none;
-  color: #007acc; /* 🔵 Couleur bleue par défaut */
+  color: #007acc; /* Couleur bleue par défaut */
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 8px 12px;
@@ -103,3 +103,4 @@ footer {
   border-top: 1px solid #ccc;
   margin-top: 40px;
 }
+
