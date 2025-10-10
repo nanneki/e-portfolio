@@ -52,21 +52,23 @@ header {
 
 .nav-links li a {
   text-decoration: none;
-  color: #333;
+  color: #007acc;
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 8px 12px;
   border-radius: 5px;
+  border: 1px solid transparent;
 }
 
+/* Survol : fond bleu clair */
 .nav-links li a:hover {
   background-color: #007acc;
   color: white;
 }
 
-/* Onglet actif */
+/* Onglet actif : fond bleu foncé */
 .nav-links li a.active {
-  background-color: #007acc;
+  background-color: #005f99;
   color: white;
   font-weight: bold;
 }
