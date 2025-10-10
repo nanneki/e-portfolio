@@ -56,11 +56,12 @@ header {
 
 .nav-links li a {
   text-decoration: none;
-  color: #007acc;            /* Couleur bleue de base */
+  color: #007acc; /* 🔵 Couleur bleue par défaut */
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 8px 12px;
   border-radius: 5px;
+  display: inline-block;
 }
 
 /* Survol : fond bleu clair */
@@ -69,7 +70,7 @@ header {
   color: white;
 }
 
-/* Onglet actif : fond bleu foncé + barre bleue */
+/* Onglet actif : fond bleu foncé + texte blanc */
 .nav-links li a.active {
   background-color: #005f99;
   color: white;
@@ -80,12 +81,12 @@ header {
 .nav-links li a.active::after {
   content: "";
   position: absolute;
-  bottom: -8px;        /* distance sous le lien */
+  bottom: -6px;        /* distance sous le lien */
   left: 0;
   width: 100%;
   height: 3px;
   background-color: #007acc;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 /* ====== MAIN ====== */
@@ -102,4 +103,3 @@ footer {
   border-top: 1px solid #ccc;
   margin-top: 40px;
 }
-
