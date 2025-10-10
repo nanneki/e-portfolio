@@ -6,37 +6,32 @@ body {
   color: #333;
 }
 
-/* ====== HEADER STRUCTURE ====== */
+/* ====== HEADER ====== */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 10px 40px;
 }
 
 /* ====== PROFILE AREA (photo + prénom) ====== */
 .profile {
-  background-color: #e6f2fb; /* fond bleu très clair */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 180px; /* largeur fixe pour la colonne gauche */
-  padding: 15px 10px;
-  border-right: 2px solid #d0e3f0;
 }
 
 .profile-pic {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 2px solid #007acc;
   object-fit: cover;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .name {
@@ -46,18 +41,12 @@ header {
 }
 
 /* ====== NAVIGATION BAR ====== */
-nav {
-  flex-grow: 1;
-}
-
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
-  gap: 20px;
+  gap: 25px;
   margin: 0;
-  padding: 20px 40px;
-  background-color: #f0f7ff; /* 🔵 fond bleu clair global */
+  padding: 0;
 }
 
 .nav-links li {
@@ -66,21 +55,25 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #005f99; /* texte bleu foncé */
-  background-color: #dbefff; /* 🔵 bleu clair permanent */
+  color: #005f99;
   font-weight: 500;
-  padding: 10px 16px;
-  border-radius: 6px;
   transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
 
-/* Survol */
+/* Onglets bleus clairs au repos */
+.nav-links li a {
+  background-color: #e8f3ff;
+}
+
+/* Survol : fond bleu vif */
 .nav-links li a:hover {
   background-color: #007acc;
   color: white;
 }
 
-/* Onglet actif */
+/* Onglet actif : fond bleu foncé + texte blanc */
 .nav-links li a.active {
   background-color: #005f99;
   color: white;
