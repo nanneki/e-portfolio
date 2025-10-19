@@ -17,7 +17,7 @@ header {
   top: 0;
   z-index: 1000;
   padding: 10px 40px;
-  flex-wrap: wrap; /* ✅ permet le retour à la ligne sur petit écran */
+  flex-wrap: wrap; /* permet le retour à la ligne sur petit écran */
 }
 
 /* ====== PROFILE AREA (photo + prénom) ====== */
@@ -46,7 +46,7 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
-  flex-wrap: wrap; /* ✅ évite le chevauchement */
+  flex-wrap: wrap; /* évite le chevauchement */
   gap: 15px;
   margin: 0;
   padding: 0;
@@ -66,7 +66,7 @@ header {
   padding: 8px 16px;
   border-radius: 8px;
   background-color: #e8f3ff; /* bleu clair au repos */
-  white-space: nowrap; /* ✅ évite les coupures de texte */
+  white-space: nowrap; /* évite les coupures de texte */
 }
 
 /* Survol : fond bleu vif */
@@ -94,7 +94,7 @@ header {
   border-radius: 2px;
 }
 
-/* ✅ Adaptation mobile */
+/* Adaptation mobile */
 @media (max-width: 800px) {
   header {
     flex-direction: column;
@@ -246,3 +246,4 @@ footer {
   font-size: 1.1em;
   vertical-align: middle;
 }
+
