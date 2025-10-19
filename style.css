@@ -17,6 +17,7 @@ header {
   top: 0;
   z-index: 1000;
   padding: 10px 40px;
+  flex-wrap: wrap; /* ✅ permet le retour à la ligne sur petit écran */
 }
 
 /* ====== PROFILE AREA (photo + prénom) ====== */
@@ -24,6 +25,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .profile-pic {
@@ -44,9 +46,12 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap; /* ✅ évite le chevauchement */
+  gap: 15px;
   margin: 0;
   padding: 0;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .nav-links li {
@@ -58,13 +63,10 @@ header {
   color: #005f99;
   font-weight: 500;
   transition: all 0.3s ease;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
-/* Onglets bleus clairs au repos */
-.nav-links li a {
-  background-color: #e8f3ff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #e8f3ff; /* bleu clair au repos */
+  white-space: nowrap; /* ✅ évite les coupures de texte */
 }
 
 /* Survol : fond bleu vif */
@@ -92,6 +94,25 @@ header {
   border-radius: 2px;
 }
 
+/* ✅ Adaptation mobile */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+}
+
 /* ====== FOOTER ====== */
 footer {
   text-align: center;
@@ -102,137 +123,126 @@ footer {
 }
 
 /* --- PAGE D’ACCUEIL (index.html) --- */
-
 .welcome-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* image 1/3 - texte 2/3 */
-    height: calc(100vh - 120px); /* prend presque tout l’écran */
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* image 1/3 - texte 2/3 */
+  height: calc(100vh - 120px);
 }
 
 .welcome-image-section {
-    background-color: #e6f0ff; /* bleu clair doux */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+  background-color: #e6f0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
 }
 
 .welcome-image img {
-    width: 90%;
-    max-width: 400px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .welcome-text-section {
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    padding: 60px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 60px;
 }
 
 .welcome-text {
-    max-width: 600px;
+  max-width: 600px;
 }
 
 .welcome-text h2 {
-    color: #0056b3;
-    margin-bottom: 15px;
+  color: #0056b3;
+  margin-bottom: 15px;
 }
 
 .welcome-text p {
-    color: #333;
-    font-size: 1.1rem;
-    line-height: 1.6;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* --- Version mobile --- */
 @media (max-width: 900px) {
-    .welcome-layout {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
+  .welcome-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 
-    .welcome-image-section, .welcome-text-section {
-        padding: 30px 20px;
-    }
+  .welcome-image-section, .welcome-text-section {
+    padding: 30px 20px;
+  }
 
-    .welcome-image img {
-        width: 80%;
-        max-width: 300px;
-    }
+  .welcome-image img {
+    width: 80%;
+    max-width: 300px;
+  }
 
-    .welcome-text-section {
-        text-align: center;
-    }
+  .welcome-text-section {
+    text-align: center;
+  }
 }
 
 /* --- Boutons de contact --- */
 .contact-buttons {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 boutons par ligne */
-    gap: 20px;
-    justify-items: center;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
 }
 
 .btn {
-    width: 200px;
-    padding: 14px 0;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    cursor: pointer;
-    background: linear-gradient(90deg, #007BFF, #00C6FF);
-    background-size: 200% 100%;
-    transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.2s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 200px;
+  padding: 14px 0;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(90deg, #007BFF, #00C6FF);
+  background-size: 200% 100%;
+  transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
-    background-position: right center;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  background-position: right center;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* Couleurs spécifiques par type */
-.linkedin { background: linear-gradient(90deg, #333, #666); }
-.github   { background: linear-gradient(90deg, #333, #666); }
-.phone    { background: linear-gradient(90deg, #333, #666); }
-.email    { background: linear-gradient(90deg, #333, #666); }
-.emailn7  { background: linear-gradient(90deg, #333, #666); }
-.cvfr     { background: linear-gradient(90deg, #333, #666); }
-.cven     { background: linear-gradient(90deg, #333, #666); }
-
-/* Responsive mobile */
+/* --- Responsive boutons --- */
 @media (max-width: 900px) {
-    .contact-buttons {
-        grid-template-columns: repeat(2, 1fr); /* 2 par ligne sur mobile */
-        gap: 15px;
-    }
+  .contact-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 
-    .btn {
-        width: 160px;
-        font-size: 0.95rem;
-    }
+  .btn {
+    width: 160px;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 600px) {
-    .contact-buttons {
-        grid-template-columns: 1fr; /* 1 par ligne sur petit écran */
-    }
+  .contact-buttons {
+    grid-template-columns: 1fr;
+  }
 
-    .btn {
-        width: 80%;
-    }
+  .btn {
+    width: 80%;
+  }
 }
 
 /* Icônes dans les boutons */
 .btn i {
-    margin-right: 10px;
-    font-size: 1.1em;
-    vertical-align: middle;
+  margin-right: 10px;
+  font-size: 1.1em;
+  vertical-align: middle;
 }
-
