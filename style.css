@@ -9,15 +9,14 @@ body {
 /* ====== HEADER ====== */
 header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 10px 40px;
-  flex-wrap: wrap; /* permet le retour à la ligne sur petit écran */
+  padding: 20px;
 }
 
 /* ====== PROFILE AREA (photo + prénom) ====== */
@@ -25,7 +24,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .profile-pic {
@@ -43,121 +42,53 @@ header {
 }
 
 /* ====== NAVIGATION BAR ====== */
-/* Conteneur des onglets */
 nav {
   display: flex;
-  flex-direction: column; /* Onglets les uns sous les autres */
-  align-items: center;
-  gap: 10px; /* Espace entre chaque onglet */
-  margin-top: 15px;
+  flex-wrap: wrap; /* évite le chevauchement */
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
 }
 
-/* Style des onglets */
+/* Style des liens */
 nav a {
-  display: block;
   text-decoration: none;
-  color: #0056b3; /* Bleu moyen */
-  background-color: #e3f2fd; /* Bleu clair */
+  color: #0056b3;
+  background-color: #e3f2fd;
   padding: 10px 20px;
   border-radius: 10px;
   font-weight: 600;
-  width: 80%;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px; /* largeur adaptable */
 }
 
-/* Couleur de survol */
+/* Survol */
 nav a:hover {
-  background-color: #90caf9; /* Bleu plus vif */
+  background-color: #90caf9;
   transform: translateY(-2px);
 }
 
 /* Onglet actif */
 nav a.active {
-  background-color: #1565c0; /* Bleu foncé */
+  background-color: #1565c0;
   color: white;
   font-weight: 700;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap; /* évite le chevauchement */
-  gap: 15px;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  flex-grow: 1;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #005f99;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background-color: #e8f3ff;
-  white-space: nowrap;
-}
-
-/* Survol */
-.nav-links li a:hover {
-  background-color: #007acc;
-  color: white;
-}
-
-/* Onglet actif */
-.nav-links li a.active {
-  background-color: #005f99;
-  color: white;
-  font-weight: bold;
-}
-
-/* Barre bleue sous l’onglet actif */
-.nav-links li a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #007acc;
-  border-radius: 2px;
-}
-
 /* Adaptation mobile */
 @media (max-width: 900px) {
-  header {
+  nav {
     flex-direction: column;
     align-items: center;
-    padding: 15px 20px;
-  }
-
-  .nav-links {
-    flex-direction: column; /* empile les onglets */
-    align-items: center;
     gap: 12px;
-    width: 100%;
   }
 
-  .nav-links li {
-    width: 90%; /* onglet plein sur presque toute la largeur */
-  }
-
-  .nav-links li a {
-    display: block;
-    width: 100%;
-    text-align: center;
+  nav a {
+    width: 80%;
     font-size: 1rem;
-    padding: 12px;
-    border-radius: 10px;
-    white-space: normal; /* permet les retours à la ligne si trop long */
   }
 }
 
@@ -170,10 +101,10 @@ footer {
   margin-top: 40px;
 }
 
-/* --- PAGE D’ACCUEIL (index.html) --- */
+/* ====== PAGE D’ACCUEIL ====== */
 .welcome-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* image 1/3 - texte 2/3 */
+  grid-template-columns: 1fr 2fr;
   height: calc(100vh - 120px);
 }
 
@@ -235,11 +166,11 @@ footer {
   }
 }
 
-/* --- Boutons de contact --- */
+/* ====== BOUTONS DE CONTACT ====== */
 .contact-buttons {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 boutons par ligne */
   gap: 20px;
   justify-items: center;
 }
@@ -265,7 +196,14 @@ footer {
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* --- Responsive boutons --- */
+/* Icônes dans les boutons */
+.btn i {
+  margin-right: 10px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* Responsive boutons */
 @media (max-width: 900px) {
   .contact-buttons {
     grid-template-columns: repeat(2, 1fr);
@@ -287,16 +225,3 @@ footer {
     width: 80%;
   }
 }
-
-/* Icônes dans les boutons */
-.btn i {
-  margin-right: 10px;
-  font-size: 1.1em;
-  vertical-align: middle;
-}
-
-
-
-
-
-
