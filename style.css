@@ -106,6 +106,19 @@ nav a.active {
   white-space: nowrap;
 }
 
+/* Survol */
+.nav-links li a:hover {
+  background-color: #007acc;
+  color: white;
+}
+
+/* Onglet actif */
+.nav-links li a.active {
+  background-color: #005f99;
+  color: white;
+  font-weight: bold;
+}
+
 /* Barre bleue sous l’onglet actif */
 .nav-links li a.active::after {
   content: "";
@@ -281,6 +294,7 @@ footer {
   font-size: 1.1em;
   vertical-align: middle;
 }
+
 
 
 
