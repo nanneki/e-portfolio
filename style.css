@@ -43,6 +43,43 @@ header {
 }
 
 /* ====== NAVIGATION BAR ====== */
+/* Conteneur des onglets */
+nav {
+  display: flex;
+  flex-direction: column; /* Onglets les uns sous les autres */
+  align-items: center;
+  gap: 10px; /* Espace entre chaque onglet */
+  margin-top: 15px;
+}
+
+/* Style des onglets */
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #0056b3; /* Bleu moyen */
+  background-color: #e3f2fd; /* Bleu clair */
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  width: 80%;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Couleur de survol */
+nav a:hover {
+  background-color: #90caf9; /* Bleu plus vif */
+  transform: translateY(-2px);
+}
+
+/* Onglet actif */
+nav a.active {
+  background-color: #1565c0; /* Bleu foncé */
+  color: white;
+  font-weight: 700;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -257,5 +294,6 @@ footer {
   font-size: 1.1em;
   vertical-align: middle;
 }
+
 
 
