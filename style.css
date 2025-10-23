@@ -9,22 +9,22 @@ body {
 /* ====== HEADER ====== */
 header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 20px;
+  padding: 10px 40px;
+  flex-wrap: wrap;
 }
 
-/* ====== PROFILE AREA (photo + prénom) ====== */
+/* ====== PROFILE ====== */
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
 }
 
 .profile-pic {
@@ -42,53 +42,74 @@ header {
 }
 
 /* ====== NAVIGATION BAR ====== */
-nav {
+.nav-links {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap; /* évite le chevauchement */
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
   justify-content: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 800px;
+  flex-grow: 1;
 }
 
-/* Style des liens */
-nav a {
+.nav-links li a {
   text-decoration: none;
-  color: #0056b3;
-  background-color: #e3f2fd;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
+  color: #005f99;
+  font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex: 1 1 250px; /* largeur adaptable */
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #e8f3ff;
+  white-space: nowrap;
 }
 
-/* Survol */
-nav a:hover {
-  background-color: #90caf9;
-  transform: translateY(-2px);
-}
-
-/* Onglet actif */
-nav a.active {
-  background-color: #1565c0;
+.nav-links li a:hover {
+  background-color: #007acc;
   color: white;
-  font-weight: 700;
 }
 
-/* Adaptation mobile */
+.nav-links li a.active {
+  background-color: #005f99;
+  color: white;
+  font-weight: bold;
+}
+
+/* ====== HAMBURGER ====== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #005f99;
+}
+
+/* ====== RESPONSIVE MENU ====== */
 @media (max-width: 900px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  .hamburger {
+    display: block;
   }
 
-  nav a {
+  #navbar {
+    display: none;
+    width: 100%;
+    background-color: #e3f2fd; /* fond bleu clair du menu déroulant */
+    padding: 15px 0;
+  }
+
+  #navbar.open {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links li a {
     width: 80%;
-    font-size: 1rem;
+    text-align: center;
+    padding: 12px;
   }
 }
 
@@ -101,7 +122,7 @@ footer {
   margin-top: 40px;
 }
 
-/* ====== PAGE D’ACCUEIL ====== */
+/* ====== PAGE WELCOME ====== */
 .welcome-layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -120,7 +141,7 @@ footer {
   width: 90%;
   max-width: 400px;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .welcome-text-section {
@@ -145,32 +166,11 @@ footer {
   line-height: 1.6;
 }
 
-/* --- Version mobile --- */
-@media (max-width: 900px) {
-  .welcome-layout {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .welcome-image-section, .welcome-text-section {
-    padding: 30px 20px;
-  }
-
-  .welcome-image img {
-    width: 80%;
-    max-width: 300px;
-  }
-
-  .welcome-text-section {
-    text-align: center;
-  }
-}
-
-/* ====== BOUTONS DE CONTACT ====== */
+/* ====== BOUTONS ====== */
 .contact-buttons {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 boutons par ligne */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
 }
@@ -187,41 +187,24 @@ footer {
   background: linear-gradient(90deg, #007BFF, #00C6FF);
   background-size: 200% 100%;
   transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
   background-position: right center;
   transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* Icônes dans les boutons */
-.btn i {
-  margin-right: 10px;
-  font-size: 1.1em;
-  vertical-align: middle;
-}
-
-/* Responsive boutons */
+/* Mobile buttons */
 @media (max-width: 900px) {
   .contact-buttons {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .btn {
-    width: 160px;
-    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 600px) {
   .contact-buttons {
     grid-template-columns: 1fr;
-  }
-
-  .btn {
-    width: 80%;
   }
 }
